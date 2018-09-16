@@ -11,8 +11,8 @@ type
     Button1: TButton;
     Timer1: TTimer;
     Panel1: TPanel;
-    Button2: TButton;
     ProgressBar1: TProgressBar;
+    Button2: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
