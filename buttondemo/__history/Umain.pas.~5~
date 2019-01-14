@@ -1,0 +1,41 @@
+unit Umain;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls;
+
+type
+  TFmain = class(TForm)
+    Panel1: TPanel;
+    Button1: TButton;
+    BClick: TButton;
+    procedure BClickClick(Sender: TObject);
+    procedure BClickMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fmain: TFmain;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFmain.BClickClick(Sender: TObject);
+begin
+ShowMessage('Enter не честно нажимать(! ');
+end;
+
+procedure TFmain.BClickMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+  var index:Integer;
+begin
+end;
+
+end.
