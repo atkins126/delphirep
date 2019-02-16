@@ -2,13 +2,13 @@ program ButtonGame;
 
 uses
   Forms,
-  Umain in 'Umain.pas' {Fmain};
+  Umain in 'Umain.pas' {Form1};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TFmain, Fmain);
+  Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.
