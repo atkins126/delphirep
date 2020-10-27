@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2020.10.27 23:00:09.615,=C:\Users\User\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020.10.27 23:00:51.227,F:\code\Result\delphi\yura\games\main.pas=C:\Users\User\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020.10.27 23:00:51.227,F:\code\Result\delphi\yura\games\main.dfm=C:\Users\User\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2020.10.27 23:01:40.566,F:\code\Result\delphi\yura\games\Project1.dproj=C:\Users\User\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2020.10.27 23:02:02.218,=F:\code\Result\delphi\yura\games\Unit1.pas</Transaction>
+    <Transaction>2020.10.27 23:02:18.967,F:\code\Result\delphi\yura\games\fdm.pas=F:\code\Result\delphi\yura\games\Unit1.pas</Transaction>
+    <Transaction>2020.10.27 23:02:18.967,F:\code\Result\delphi\yura\games\fdm.dfm=F:\code\Result\delphi\yura\games\Unit1.dfm</Transaction>
+    <Transaction>2020.10.27 23:07:44.988,=F:\code\Result\delphi\yura\games\Unit2.pas</Transaction>
+    <Transaction>2020.10.27 23:08:38.803,F:\code\Result\delphi\yura\games\ins_dol.dfm=F:\code\Result\delphi\yura\games\Unit2.dfm</Transaction>
+    <Transaction>2020.10.27 23:08:38.803,F:\code\Result\delphi\yura\games\ins_dol.pas=F:\code\Result\delphi\yura\games\Unit2.pas</Transaction>
+    <Transaction>2020.10.27 23:10:43.713,=F:\code\Result\delphi\yura\games\Unit2.pas</Transaction>
+    <Transaction>2020.10.27 23:11:15.615,F:\code\Result\delphi\yura\games\ins_etap.dfm=F:\code\Result\delphi\yura\games\Unit2.dfm</Transaction>
+    <Transaction>2020.10.27 23:11:15.615,F:\code\Result\delphi\yura\games\ins_etap.pas=F:\code\Result\delphi\yura\games\Unit2.pas</Transaction>
+    <Transaction>2020.10.27 23:13:07.860,=F:\code\Result\delphi\yura\games\Unit2.pas</Transaction>
+    <Transaction>2020.10.27 23:13:26.519,F:\code\Result\delphi\yura\games\ins_work.pas=F:\code\Result\delphi\yura\games\Unit2.pas</Transaction>
+    <Transaction>2020.10.27 23:13:26.519,F:\code\Result\delphi\yura\games\ins_work.dfm=F:\code\Result\delphi\yura\games\Unit2.dfm</Transaction>
+    <Transaction>2020.10.28 00:22:39.519,=F:\code\Result\delphi\yura\games\Unit2.pas</Transaction>
+    <Transaction>2020.10.28 00:23:16.338,F:\code\Result\delphi\yura\games\ins_worлук.dfm=F:\code\Result\delphi\yura\games\Unit2.dfm</Transaction>
+    <Transaction>2020.10.28 00:23:16.338,F:\code\Result\delphi\yura\games\ins_worлук.pas=F:\code\Result\delphi\yura\games\Unit2.pas</Transaction>
+    <Transaction>2020.10.28 00:24:47.983,F:\code\Result\delphi\yura\games\ins_woreker.pas=F:\code\Result\delphi\yura\games\ins_worлук.pas</Transaction>
+    <Transaction>2020.10.28 00:24:47.983,F:\code\Result\delphi\yura\games\ins_woreker.dfm=F:\code\Result\delphi\yura\games\ins_worлук.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
