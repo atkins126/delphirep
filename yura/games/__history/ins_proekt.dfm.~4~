@@ -19,7 +19,7 @@ object Fins_proekt: TFins_proekt
     Left = 0
     Top = 0
     Width = 635
-    Height = 178
+    Height = 121
     Align = alTop
     Caption = #1042#1093#1086#1076#1085#1099#1077' '#1076#1072#1085#1085#1099#1077
     TabOrder = 0
@@ -51,9 +51,9 @@ object Fins_proekt: TFins_proekt
       TabOrder = 1
     end
     object LabeledEdit3: TLabeledEdit
-      Left = 118
+      Left = 88
       Top = 97
-      Width = 517
+      Width = 547
       Height = 21
       EditLabel.Width = 51
       EditLabel.Height = 13
@@ -71,28 +71,6 @@ object Fins_proekt: TFins_proekt
       EditLabel.Caption = #1046#1072#1085#1088
       LabelPosition = lpLeft
       TabOrder = 3
-    end
-    object LabeledEdit4: TLabeledEdit
-      Left = 115
-      Top = 124
-      Width = 517
-      Height = 21
-      EditLabel.Width = 77
-      EditLabel.Height = 13
-      EditLabel.Caption = #1062#1077#1085#1072' '#1087#1083#1072#1085#1086#1074#1072#1103
-      LabelPosition = lpLeft
-      TabOrder = 4
-    end
-    object LabeledEdit5: TLabeledEdit
-      Left = 115
-      Top = 151
-      Width = 517
-      Height = 21
-      EditLabel.Width = 96
-      EditLabel.Height = 13
-      EditLabel.Caption = #1062#1077#1085#1072' '#1092#1072#1082#1090#1080#1095#1077#1089#1082#1072#1103
-      LabelPosition = lpLeft
-      TabOrder = 5
     end
   end
   object GroupBox3: TGroupBox
@@ -115,19 +93,17 @@ object Fins_proekt: TFins_proekt
   end
   object GroupBox2: TGroupBox
     Left = 0
-    Top = 178
+    Top = 121
     Width = 635
-    Height = 357
+    Height = 414
     Align = alClient
     Caption = #1042#1099#1093#1086#1076#1085#1099#1077' '#1076#1072#1085#1085#1099#1077' '
     TabOrder = 2
-    ExplicitTop = 184
-    ExplicitHeight = 351
     object DBGrid1: TDBGrid
       Left = 2
       Top = 15
       Width = 631
-      Height = 340
+      Height = 397
       Align = alClient
       DataSource = DM1.DSproect
       TabOrder = 0

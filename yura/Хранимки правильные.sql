@@ -5,7 +5,7 @@ as
 begin
 insert into Dolshnost(Nam_dol) values(@Nam_dol)
 end
---exec ins_dol  'проектировщик'
+--exec ins_dol  'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'
 --select * from Dolshnost
 
 alter proc ins_etap
@@ -26,7 +26,7 @@ as
 begin
 insert into Proect ( Nam_proect,janr,data_nash,menager) values(@Nam_proect,@janr,@data_nash,@menager)
 end
-exec ins_proect  'проба2', 'симулятор','2020-12-03','Петров'
+exec ins_proect  'пїЅпїЅпїЅпїЅпїЅ2', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ','2020-12-03','пїЅпїЅпїЅпїЅпїЅпїЅ'
 select * from Proect
 create proc ins_rabotnic
 @Fio varchar(100),
@@ -38,7 +38,7 @@ as
 begin
 insert into Rabotnik(Fio,N_Dol,Iphone ,St_rab ,Date_pr) values(@Fio,@N_Dol,@Iphone,@St_rab,@Date_pr)
 end
-exec ins_rabotnic 'петров ',1,234,'2020-03-02','2020-03-02'
+exec ins_rabotnic 'пїЅпїЅпїЅпїЅпїЅпїЅ ',1,234,'2020-03-02','2020-03-02'
 select  * from Rabotnik
 create proc upd_rab
 @N_rab int,
@@ -56,7 +56,7 @@ as
 begin
 insert into Work(Nam_work,T_days,N_Etap) values(@Nam_work,@T_days,@N_Etap)
 end
-exec ins_work 'проектирование ','2020-02-02',1
+exec ins_work 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ','2020-02-02',1
 select * from Zadanie
 create proc ins_zadanie
 @Sr_vip date,
@@ -69,7 +69,7 @@ as
  begin
  insert into Zadanie(Sr_vip,N_Rab,St_rab,Data_nash,N_Proekta,N_Work) values(@Sr_vip,@N_Rab,@St_rab,@Data_nash,@N_Proekta,@N_Work)
  end
-exec ins_zadanie '2020-12-12',1,'выполняется','2020-02-05',1,1 
+exec ins_zadanie '2020-12-12',1,'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ','2020-02-05',1,1 
 select * from Zadanie
 create proc vip_zadan
 @N_zad int,
@@ -78,6 +78,25 @@ as
 begin
 update Zadanie set Date_fakt=@date_fakt where N_Zad=@N_zad
 end
+/*
+РґРѕР±Р°РІР»СЏРµРј СЃС‚РѕРёРјРѕСЃС‚СЊ Рё РїСЂР°РІРёРј РїСЂРѕС†РµРґСѓСЂСѓ ins_proekt
+*/
+use Razrab_Andryuschenko
+select * from Proect
+update Proect set cost_plan=100,cost_fact=1000
+ALTER proc [dbo].[ins_proect]
+@Nam_proect varchar(200),
+@janr  varchar(50),
+@data_nash date,
+@menager char(50),
+@cost_plan decimal(10,2), 
+@cost_fact decimal(10,2)
+as
+begin
+insert into Proect ( Nam_proect,janr,data_nash,menager,cost_plan, cost_fact) values(@Nam_proect,@janr,@data_nash,@menager,@cost_plan,@cost_fact)
+end
+exec ins_proect 'doom2','game','2020-12-12','РџРµС‚СЂРѕРѕРІР°',100.0000,100.0000
+select * from Proect
 
 
 
