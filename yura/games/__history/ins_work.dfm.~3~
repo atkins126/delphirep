@@ -75,6 +75,7 @@ object Fins_work: TFins_work
     Height = 43
     Align = alBottom
     TabOrder = 1
+    ExplicitTop = 256
     object Button1: TButton
       Left = 2
       Top = 15
@@ -84,7 +85,6 @@ object Fins_work: TFins_work
       Caption = #1042#1074#1086#1076
       TabOrder = 0
       OnClick = Button1Click
-      ExplicitTop = 14
     end
   end
   object GroupBox2: TGroupBox
@@ -95,6 +95,10 @@ object Fins_work: TFins_work
     Align = alClient
     Caption = #1042#1099#1093#1086#1076#1085#1099#1077' '#1076#1072#1085#1085#1099#1077' '
     TabOrder = 2
+    ExplicitLeft = 240
+    ExplicitTop = 128
+    ExplicitWidth = 185
+    ExplicitHeight = 105
     object DBGrid1: TDBGrid
       Left = 2
       Top = 15

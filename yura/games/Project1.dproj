@@ -68,6 +68,12 @@
 			<DCCReference Include="ins_woreker.pas">
 				<Form>fins_woreker</Form>
 			</DCCReference>
+			<DCCReference Include="ins_proekt.pas">
+				<Form>Fins_proekt</Form>
+			</DCCReference>
+			<DCCReference Include="ins_zadan.pas">
+				<Form>Fins_zadan</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

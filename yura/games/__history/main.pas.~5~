@@ -16,13 +16,11 @@ type
     N5: TMenuItem;
     N6: TMenuItem;
     N7: TMenuItem;
-    N8: TMenuItem;
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
     procedure N7Click(Sender: TObject);
-    procedure N8Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,7 +32,7 @@ var
 
 implementation
 
-uses ins_dol, ins_etap, ins_work, ins_woreker, ins_proekt, ins_zadan;
+uses ins_dol, ins_etap, ins_work, ins_woreker, ins_proekt;
 
 {$R *.dfm}
 
@@ -62,11 +60,6 @@ end;
 procedure TForm1.N7Click(Sender: TObject);
 begin
 Fins_proekt.ShowModal;
-end;
-
-procedure TForm1.N8Click(Sender: TObject);
-begin
-Fins_zadan.ShowModal;
 end;
 
 end.

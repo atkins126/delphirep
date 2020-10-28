@@ -11,6 +11,8 @@ object fins_woreker: Tfins_woreker
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnActivate = FormActivate
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
@@ -22,23 +24,23 @@ object fins_woreker: Tfins_woreker
     Caption = #1042#1093#1086#1076#1085#1099#1077' '#1076#1072#1085#1085#1099#1077
     TabOrder = 0
     object Label2: TLabel
-      Left = 6
+      Left = 19
       Top = 43
       Width = 63
       Height = 13
       Caption = #1044#1086#1088#1083#1078#1085#1086#1089#1090#1100
     end
     object Label1: TLabel
-      Left = -9
+      Left = 3
       Top = 124
-      Width = 123
+      Width = 118
       Height = 13
       Caption = #1076#1072#1090#1072' '#1087#1088#1080#1077#1084#1072' '#1085#1072' '#1088#1072#1073#1086#1090#1091
     end
     object LabeledEdit1: TLabeledEdit
-      Left = 96
+      Left = 88
       Top = 16
-      Width = 536
+      Width = 544
       Height = 21
       EditLabel.Width = 80
       EditLabel.Height = 13
@@ -47,43 +49,43 @@ object fins_woreker: Tfins_woreker
       TabOrder = 0
     end
     object DBLookupComboBox1: TDBLookupComboBox
-      Left = 75
+      Left = 88
       Top = 43
-      Width = 560
+      Width = 547
       Height = 21
-      KeyField = 'N_Etap'
-      ListField = 'Nam_etap'
-      ListSource = DM1.DSetap
+      KeyField = 'N_Dol'
+      ListField = 'Nam_dol'
+      ListSource = DM1.DSdol
       TabOrder = 1
     end
     object DateTimePicker1: TDateTimePicker
-      Left = 120
+      Left = 127
       Top = 124
-      Width = 515
+      Width = 505
       Height = 21
       Date = 44131.993537060180000000
       Time = 44131.993537060180000000
       TabOrder = 2
     end
-    object LabeledEdit2: TLabeledEdit
-      Left = 75
-      Top = 70
-      Width = 560
-      Height = 21
-      EditLabel.Width = 44
-      EditLabel.Height = 13
-      EditLabel.Caption = #1058#1077#1083#1077#1092#1086#1085
-      LabelPosition = lpLeft
-      TabOrder = 3
-    end
     object LabeledEdit3: TLabeledEdit
-      Left = 75
+      Left = 88
       Top = 97
-      Width = 560
+      Width = 547
       Height = 21
       EditLabel.Width = 34
       EditLabel.Height = 13
       EditLabel.Caption = #1089#1090#1072#1090#1091#1089
+      LabelPosition = lpLeft
+      TabOrder = 3
+    end
+    object LabeledEdit2: TLabeledEdit
+      Left = 88
+      Top = 70
+      Width = 544
+      Height = 21
+      EditLabel.Width = 44
+      EditLabel.Height = 13
+      EditLabel.Caption = #1058#1077#1083#1077#1092#1086#1085
       LabelPosition = lpLeft
       TabOrder = 4
     end
@@ -95,7 +97,6 @@ object fins_woreker: Tfins_woreker
     Height = 43
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 256
     object Button1: TButton
       Left = 2
       Top = 15
@@ -104,6 +105,9 @@ object fins_woreker: Tfins_woreker
       Align = alClient
       Caption = #1042#1074#1086#1076
       TabOrder = 0
+      OnClick = Button1Click
+      ExplicitLeft = 3
+      ExplicitTop = 14
     end
   end
   object GroupBox2: TGroupBox
@@ -114,15 +118,13 @@ object fins_woreker: Tfins_woreker
     Align = alClient
     Caption = #1042#1099#1093#1086#1076#1085#1099#1077' '#1076#1072#1085#1085#1099#1077' '
     TabOrder = 2
-    ExplicitTop = -34
-    ExplicitHeight = 333
     object DBGrid1: TDBGrid
       Left = 2
       Top = 15
       Width = 631
       Height = 295
       Align = alClient
-      DataSource = DM1.DSwork
+      DataSource = DM1.DSwoker
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText

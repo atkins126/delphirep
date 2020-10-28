@@ -19,7 +19,8 @@ type
     Button1: TButton;
     GroupBox2: TGroupBox;
     DBGrid1: TDBGrid;
-    LabeledEdit2: TLabeledEdit;
+    Label3: TLabel;
+    MaskEdit1: TMaskEdit;
     procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button1Click(Sender: TObject);
@@ -42,14 +43,13 @@ procedure Tfins_woreker.Button1Click(Sender: TObject);
 begin
 DM1.ins_rabotnic.Parameters.ParamValues['@fio']:=LabeledEdit1.Text;
 DM1.ins_rabotnic.Parameters.ParamValues['@N_dol']:=DBLookupComboBox1.KeyValue;
-DM1.ins_rabotnic.Parameters.ParamValues['@Iphone']:=StrToInt(LabeledEdit2.Text);
+DM1.ins_rabotnic.Parameters.ParamValues['@Iphone']:=IntToStr(MaskEdit1.Text);
 DM1.ins_rabotnic.Parameters.ParamValues['@st_rab']:=LabeledEdit3.Text;
 DM1.ins_rabotnic.Parameters.ParamValues['@date_pr']:=DateToStr(DateTimePicker1.Date);
 DM1.ins_rabotnic.ExecProc;
 dm1.Querywoker.Close;
 DM1.Querywoker.Open;
 ShowMessage('Изменения внесены');
-
 end;
 
 procedure Tfins_woreker.FormActivate(Sender: TObject);
