@@ -9,7 +9,8 @@ uses
   ins_work in 'ins_work.pas' {Fins_work},
   ins_woreker in 'ins_woreker.pas' {fins_woreker},
   ins_proekt in 'ins_proekt.pas' {Fins_proekt},
-  ins_zadan in 'ins_zadan.pas' {Fins_zadan};
+  ins_zadan in 'ins_zadan.pas' {Fins_zadan},
+  otchet in 'otchet.pas' {fptchet};
 
 {$R *.res}
 
@@ -24,5 +25,6 @@ begin
   Application.CreateForm(Tfins_woreker, fins_woreker);
   Application.CreateForm(TFins_proekt, Fins_proekt);
   Application.CreateForm(TFins_zadan, Fins_zadan);
+  Application.CreateForm(Tfptchet, fptchet);
   Application.Run;
 end.

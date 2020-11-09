@@ -26,6 +26,8 @@ type
     Queryzadanie: TADOQuery;
     ins_zadanie: TADOStoredProc;
     DSzadanie: TDataSource;
+    Queryreport: TADOQuery;
+    DSreport: TDataSource;
   private
     { Private declarations }
   public
@@ -37,7 +39,7 @@ var
 
 implementation
 
-uses ins_dol, ins_etap, ins_work, ins_woreker, ins_zadan, ins_proekt;
+uses ins_dol, ins_etap, ins_work, ins_woreker, ins_zadan, ins_proekt, otchet;
 
 {$R *.dfm}
 

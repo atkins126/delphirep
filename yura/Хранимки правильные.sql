@@ -97,6 +97,33 @@ insert into Proect ( Nam_proect,janr,data_nash,menager,cost_plan, cost_fact) val
 end
 exec ins_proect 'doom2','game','2020-12-12','Петроова',100.0000,100.0000
 select * from Proect
+/*
+плановая дата(нужна в отчете)
+*/
+use Razrab_Andryuschenko
+alter proc report1
+@dnp date
+as
+begin
+select Proect.Nam_proect, Proect.janr,Proect.data_nash,Proect.dataend,Proect.dataendplan, Proect.cost_plan, Proect.cost_fact
+from Proect 
+where Proect.dataendplan=@dnp
+end
+exec  report1 '2020-12-12'
+select * from Proect
+update Proect set dataendplan='2020-12-12'
+ALTER proc [dbo].[ins_proect]
+@Nam_proect varchar(200),
+@janr  varchar(50),
+@data_nash date,
+@menager char(50),
+@cost_plan decimal(10,2), 
+@cost_fact decimal(10,2),
+@dataendplan date
+as
+begin
+insert into Proect ( Nam_proect,janr,data_nash,menager,cost_plan, cost_fact,dataendplan ) values(@Nam_proect,@janr,@data_nash,@menager,@cost_plan,@cost_fact, @dataendplan)
+end
 
 
 

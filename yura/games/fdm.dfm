@@ -261,6 +261,13 @@ object DM1: TDM1
         NumericScale = 2
         Precision = 10
         Value = 0.000000000000000000
+      end
+      item
+        Name = '@dataendplan'
+        Attributes = [paNullable]
+        DataType = ftWideString
+        Size = 16
+        Value = '0:00:00'
       end>
     Left = 304
     Top = 208
@@ -333,5 +340,18 @@ object DM1: TDM1
     DataSet = Queryzadanie
     Left = 368
     Top = 136
+  end
+  object Queryreport: TADOQuery
+    Connection = ADOConnection1
+    Parameters = <>
+    SQL.Strings = (
+      'exec  report1 '#39'2020-12-12'#39)
+    Left = 440
+    Top = 80
+  end
+  object DSreport: TDataSource
+    DataSet = Queryreport
+    Left = 432
+    Top = 152
   end
 end

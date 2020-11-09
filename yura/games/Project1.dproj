@@ -74,6 +74,9 @@
 			<DCCReference Include="ins_zadan.pas">
 				<Form>Fins_zadan</Form>
 			</DCCReference>
+			<DCCReference Include="otchet.pas">
+				<Form>fptchet</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

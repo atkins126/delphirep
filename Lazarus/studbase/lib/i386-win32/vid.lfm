@@ -25,13 +25,13 @@ object Form1: TForm1
         Height = 769
         Top = 0
         Width = 655
-        ActivePage = TabSheet6
+        ActivePage = TabSheet3
         Align = alClient
-        TabIndex = 3
+        TabIndex = 0
         TabOrder = 0
         object TabSheet3: TTabSheet
           Caption = 'Ввод специальности'
-          ClientHeight = 293
+          ClientHeight = 741
           ClientWidth = 647
           object GroupBox1: TGroupBox
             Left = 0
@@ -58,7 +58,7 @@ object Form1: TForm1
           object GroupBox2: TGroupBox
             Left = 0
             Height = 65
-            Top = 228
+            Top = 676
             Width = 647
             Align = alBottom
             ClientHeight = 45
@@ -70,6 +70,7 @@ object Form1: TForm1
               Top = -8
               Width = 96
               Caption = 'ввести'
+              OnClick = Button1Click
               TabOrder = 0
             end
             object Button2: TButton
@@ -91,17 +92,17 @@ object Form1: TForm1
           end
           object GroupBox3: TGroupBox
             Left = 0
-            Height = 155
+            Height = 603
             Top = 73
             Width = 647
             Align = alClient
             Caption = 'Выходные данные'
-            ClientHeight = 135
+            ClientHeight = 583
             ClientWidth = 643
             TabOrder = 2
             object DBGrid1: TDBGrid
               Left = 0
-              Height = 135
+              Height = 583
               Top = 0
               Width = 643
               Align = alClient
@@ -113,7 +114,7 @@ object Form1: TForm1
         end
         object TabSheet4: TTabSheet
           Caption = 'Ввод  группы'
-          ClientHeight = 293
+          ClientHeight = 741
           ClientWidth = 647
           object GroupBox4: TGroupBox
             Left = 0
@@ -174,7 +175,7 @@ object Form1: TForm1
           object GroupBox5: TGroupBox
             Left = 0
             Height = 41
-            Top = 252
+            Top = 700
             Width = 647
             Align = alBottom
             ClientHeight = 21
@@ -186,6 +187,7 @@ object Form1: TForm1
               Top = 0
               Width = 75
               Caption = 'добавить'
+              OnClick = Button4Click
               TabOrder = 0
             end
             object Button5: TButton
@@ -207,17 +209,17 @@ object Form1: TForm1
           end
           object GroupBox6: TGroupBox
             Left = 0
-            Height = 92
+            Height = 540
             Top = 160
             Width = 647
             Align = alClient
             Caption = 'Выходные даннеы'
-            ClientHeight = 72
+            ClientHeight = 520
             ClientWidth = 643
             TabOrder = 2
             object DBGrid2: TDBGrid
               Left = 0
-              Height = 72
+              Height = 520
               Top = 0
               Width = 643
               Align = alClient
@@ -229,7 +231,7 @@ object Form1: TForm1
         end
         object TabSheet5: TTabSheet
           Caption = 'Информация о социальном'
-          ClientHeight = 375
+          ClientHeight = 741
           ClientWidth = 647
           object GroupBox7: TGroupBox
             Left = 0
@@ -278,7 +280,7 @@ object Form1: TForm1
           object GroupBox8: TGroupBox
             Left = 0
             Height = 63
-            Top = 312
+            Top = 678
             Width = 647
             Align = alBottom
             ClientHeight = 43
@@ -290,6 +292,7 @@ object Form1: TForm1
               Top = 6
               Width = 75
               Caption = 'добавить'
+              OnClick = Button7Click
               TabOrder = 0
             end
             object Button8: TButton
@@ -311,17 +314,17 @@ object Form1: TForm1
           end
           object GroupBox9: TGroupBox
             Left = 0
-            Height = 135
+            Height = 501
             Top = 177
             Width = 647
             Align = alClient
             Caption = 'Выходные данные'
-            ClientHeight = 115
+            ClientHeight = 481
             ClientWidth = 643
             TabOrder = 2
             object DBGrid3: TDBGrid
               Left = 0
-              Height = 115
+              Height = 481
               Top = 0
               Width = 643
               Align = alClient
@@ -548,6 +551,7 @@ object Form1: TForm1
               Top = 8
               Width = 75
               Caption = 'Добавить'
+              OnClick = Button10Click
               TabOrder = 0
             end
             object Button11: TButton

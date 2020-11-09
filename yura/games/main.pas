@@ -23,6 +23,7 @@ type
     procedure N6Click(Sender: TObject);
     procedure N7Click(Sender: TObject);
     procedure N8Click(Sender: TObject);
+    procedure N2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,9 +35,14 @@ var
 
 implementation
 
-uses ins_dol, ins_etap, ins_work, ins_woreker, ins_proekt, ins_zadan;
+uses ins_dol, ins_etap, ins_work, ins_woreker, ins_proekt, ins_zadan, otchet;
 
 {$R *.dfm}
+
+procedure TForm1.N2Click(Sender: TObject);
+begin
+fptchet.ShowModal;
+end;
 
 procedure TForm1.N3Click(Sender: TObject);
 begin

@@ -46,6 +46,7 @@ object Form1: TForm1
     end
     object N2: TMenuItem
       Caption = #1054#1090#1095#1077#1090#1099
+      OnClick = N2Click
     end
   end
 end

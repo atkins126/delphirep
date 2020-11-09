@@ -20,6 +20,8 @@ type
     DBGrid1: TDBGrid;
     LabeledEdit4: TLabeledEdit;
     LabeledEdit5: TLabeledEdit;
+    DateTimePicker2: TDateTimePicker;
+    Label2: TLabel;
     procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button1Click(Sender: TObject);
@@ -46,6 +48,7 @@ DM1.ins_proect.Parameters.ParamValues['@data_nash']:=DateToStr(DateTimePicker1.D
 DM1.ins_proect.Parameters.ParamValues['@menager']:=LabeledEdit3.Text;
 DM1.ins_proect.Parameters.ParamValues['@cost_plan']:=StrToFloat(LabeledEdit4.Text);
 DM1.ins_proect.Parameters.ParamValues['@cost_fact']:=StrToFloat(LabeledEdit5.Text);
+DM1.ins_proect.Parameters.ParamValues['@dataendplan']:=DateToStr(DateTimePicker2.Date);
 DM1.ins_proect.ExecProc;
 DM1.Queryproect.Close;
 DM1.Queryproect.Open;
