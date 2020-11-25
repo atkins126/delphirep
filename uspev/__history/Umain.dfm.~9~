@@ -21,7 +21,7 @@ object Fmain: TFmain
     Top = 0
     Width = 1058
     Height = 767
-    ActivePage = TabSheet6
+    ActivePage = TabSheet5
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -640,92 +640,6 @@ object Fmain: TFmain
           Time = 44159.995505358800000000
           TabOrder = 6
         end
-      end
-    end
-    object TabSheet6: TTabSheet
-      Caption = #1057#1087#1080#1089#1086#1082' '#1079#1072#1095#1080#1089#1083#1077#1085#1085#1099#1093' '#1079#1072' '#1087#1077#1088#1080#1086#1076' '#1089'____ '#1087#1086' ___'
-      ImageIndex = 5
-      ExplicitLeft = 8
-      ExplicitTop = 28
-      object GroupBox16: TGroupBox
-        Left = 0
-        Top = 105
-        Width = 1050
-        Height = 575
-        Align = alClient
-        Caption = #1042#1099#1074#1086#1076' '#1076#1072#1085#1085#1099#1093
-        TabOrder = 0
-        ExplicitLeft = 432
-        ExplicitTop = 320
-        ExplicitWidth = 185
-        ExplicitHeight = 105
-        object DBGrid6: TDBGrid
-          Left = 2
-          Top = 15
-          Width = 1046
-          Height = 558
-          Align = alClient
-          DataSource = fDM.DSreport
-          TabOrder = 0
-          TitleFont.Charset = DEFAULT_CHARSET
-          TitleFont.Color = clWindowText
-          TitleFont.Height = -11
-          TitleFont.Name = 'Tahoma'
-          TitleFont.Style = []
-        end
-      end
-      object GroupBox17: TGroupBox
-        Left = 0
-        Top = 0
-        Width = 1050
-        Height = 105
-        Align = alTop
-        Caption = #1042#1074#1086#1076' '#1076#1072#1085#1085#1099#1093
-        TabOrder = 1
-        ExplicitLeft = 440
-        ExplicitTop = 328
-        ExplicitWidth = 185
-        object Label11: TLabel
-          Left = 48
-          Top = 32
-          Width = 40
-          Height = 13
-          Caption = #1053#1072#1095#1072#1083#1086' '
-        end
-        object Label12: TLabel
-          Left = 608
-          Top = 32
-          Width = 31
-          Height = 13
-          Caption = #1050#1086#1085#1077#1094
-        end
-        object DateTimePicker7: TDateTimePicker
-          Left = 48
-          Top = 51
-          Width = 186
-          Height = 21
-          Date = 44160.459484479160000000
-          Time = 44160.459484479160000000
-          TabOrder = 0
-          OnChange = DateTimePicker7Change
-        end
-        object DateTimePicker8: TDateTimePicker
-          Left = 584
-          Top = 51
-          Width = 186
-          Height = 21
-          Date = 44160.459484479160000000
-          Time = 44160.459484479160000000
-          TabOrder = 1
-        end
-      end
-      object GroupBox18: TGroupBox
-        Left = 0
-        Top = 680
-        Width = 1050
-        Height = 59
-        Align = alBottom
-        TabOrder = 2
       end
     end
   end

@@ -49,8 +49,6 @@ type
     Queryprikazprikaz_sod: TStringField;
     Queryprikazprich_id: TIntegerField;
     Queryprikazdata_n: TWideStringField;
-    Queryreport: TADOQuery;
-    DSreport: TDataSource;
   private
     { Private declarations }
   public

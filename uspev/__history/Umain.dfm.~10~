@@ -665,7 +665,6 @@ object Fmain: TFmain
           Width = 1046
           Height = 558
           Align = alClient
-          DataSource = fDM.DSreport
           TabOrder = 0
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
@@ -707,7 +706,6 @@ object Fmain: TFmain
           Date = 44160.459484479160000000
           Time = 44160.459484479160000000
           TabOrder = 0
-          OnChange = DateTimePicker7Change
         end
         object DateTimePicker8: TDateTimePicker
           Left = 584

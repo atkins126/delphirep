@@ -229,7 +229,6 @@ object fDM: TfDM
         DataType = ftInteger
         Direction = pdReturnValue
         Precision = 10
-        Value = Null
       end
       item
         Name = '@fio'
@@ -285,7 +284,6 @@ object fDM: TfDM
         Attributes = [paNullable]
         DataType = ftWideString
         Size = 10
-        Value = Null
       end
       item
         Name = '@fio_m'
@@ -371,7 +369,6 @@ object fDM: TfDM
         DataType = ftInteger
         Direction = pdReturnValue
         Precision = 10
-        Value = Null
       end
       item
         Name = '@prikaz_date'
@@ -424,18 +421,5 @@ object fDM: TfDM
       end>
     Left = 360
     Top = 240
-  end
-  object Queryreport: TADOQuery
-    Connection = ADOConnection1
-    Parameters = <>
-    SQL.Strings = (
-      'select *  from uchen')
-    Left = 432
-    Top = 96
-  end
-  object DSreport: TDataSource
-    DataSet = Queryreport
-    Left = 440
-    Top = 160
   end
 end

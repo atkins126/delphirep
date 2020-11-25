@@ -74,6 +74,15 @@ type
     DBLookupComboBox4: TDBLookupComboBox;
     Label10: TLabel;
     DateTimePicker6: TDateTimePicker;
+    TabSheet6: TTabSheet;
+    GroupBox16: TGroupBox;
+    GroupBox17: TGroupBox;
+    GroupBox18: TGroupBox;
+    DBGrid6: TDBGrid;
+    Label11: TLabel;
+    Label12: TLabel;
+    DateTimePicker7: TDateTimePicker;
+    DateTimePicker8: TDateTimePicker;
     procedure FormShow(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -83,6 +92,7 @@ type
     procedure Button5Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     function DateToStr_(Dat : TDate): String;
+    procedure DateTimePicker7Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -97,6 +107,17 @@ implementation
 uses Ureg, Udm;
 
 {$R *.dfm}
+procedure TFmain.DateTimePicker7Change(Sender: TObject);
+begin
+fdm.Queryreport.Close;
+fDM.Queryreport.SQL.Clear;
+fdm.Queryreport.SQL.Text:='exec report1 '+QuotedStr(DateToStr_(DateTimePicker7.Date))+','
++QuotedStr(DateToStr_(DateTimePicker8.Date));
+fdm.Queryreport.ExecSQL;
+fdm.Queryreport.Open;
+
+end;
+
 function Tfmain.DateToStr_(Dat : TDate): String;
 begin
   Result:= IntToStr(MonthOf(Dat))+'.'
@@ -110,6 +131,7 @@ fdm.Queryprich.Close;
 fdm.ins_prich.Parameters.ParamValues['@prich_naim']:=LabeledEdit1.Text;
 fdm.ins_prich.ExecProc;
 fDM.Queryprich.Open;
+fdm.Queryreport.Open;
 end;
 
 procedure TFmain.Button2Click(Sender: TObject);
