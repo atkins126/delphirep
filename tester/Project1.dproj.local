@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-  <Transactions>
-    <Transaction>2019.12.31 12:17:32.721,=C:\Users\User\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2019.12.31 12:19:22.801,F:\code\Result\delphi\tester\Unit1.dfm=C:\Users\User\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2019.12.31 12:19:22.801,F:\code\Result\delphi\tester\Unit1.pas=C:\Users\User\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2019.12.31 12:19:30.955,F:\code\Result\delphi\tester\Project1.dproj=C:\Users\User\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
-  </Transactions>
-</BorlandProject>
