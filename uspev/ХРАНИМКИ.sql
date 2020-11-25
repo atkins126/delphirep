@@ -1,3 +1,4 @@
+use uspev
 create proc ins_prich
 @prich_naim varchar (150)
 as
@@ -61,7 +62,16 @@ select * from klass
 --exec ins_prikaz '2012-12-12','проба','2012-12-12',1,'проба2',1,'2012-12-12'
 --select * from prikaz
 
-
+create proc report1
+@datan date,
+@data_k date
+as
+begin
+select uchen.uchen_id, uchen.FIO, uchen.datar, uchen.adr, uchen.pol, uchen.citizen, uchen.health_group, uchen.klass_id 
+from uchen 
+where uchen.Datap between  @datan and @data_k
+end
+exec report1 '2012-12-12','2030-12-21'
 
 
 
