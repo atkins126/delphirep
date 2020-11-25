@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, StdCtrls, ExtCtrls, ComCtrls, DBCtrls;
+  Dialogs, Grids, DBGrids, StdCtrls, ExtCtrls, ComCtrls, DBCtrls,DateUtils;
 
 type
   TFmain = class(TForm)
@@ -82,6 +82,7 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    function DateToStr_(Dat : TDate): String;
   private
     { Private declarations }
   public
@@ -96,6 +97,12 @@ implementation
 uses Ureg, Udm;
 
 {$R *.dfm}
+function Tfmain.DateToStr_(Dat : TDate): String;
+begin
+  Result:= IntToStr(MonthOf(Dat))+'.'
+  +IntToStr(DayOf(Dat))+'.'
+  +IntToStr(YearOf(Dat));
+end;
 
 procedure TFmain.Button1Click(Sender: TObject);
 begin
@@ -127,13 +134,13 @@ end;
 procedure TFmain.Button4Click(Sender: TObject);
 begin
 fdm.Queryprikaz.Close;
-fdm.ins_prikaz.Parameters.ParamValues['@prikaz_date']:=DateToStr(DateTimePicker4.Date);
+fdm.ins_prikaz.Parameters.ParamValues['@prikaz_date']:=DateToStr_(DateTimePicker4.Date);
 fdm.ins_prikaz.Parameters.ParamValues['@prikaz_type']:=LabeledEdit14.Text;
-fdm.ins_prikaz.Parameters.ParamValues['@date_k']:=DateToStr(DateTimePicker5.Date);
+fdm.ins_prikaz.Parameters.ParamValues['@date_k']:=DateToStr_(DateTimePicker5.Date);
 fdm.ins_prikaz.Parameters.ParamValues['@uchen_id']:=DBLookupComboBox3.KeyValue;
 fdm.ins_prikaz.Parameters.ParamValues['@prikaz_sod']:=LabeledEdit15.Text;
 fdm.ins_prikaz.Parameters.ParamValues['@prich_id']:=DBLookupComboBox4.KeyValue;
-fdm.ins_prikaz.Parameters.ParamValues['@data_n']:=DateToStr(DateTimePicker6.Date);
+fdm.ins_prikaz.Parameters.ParamValues['@data_n']:=DateToStr_(DateTimePicker6.Date);
 fdm.ins_prikaz.ExecProc;
 fdm.Queryprikaz.Open;
 
@@ -145,11 +152,11 @@ fdm.Queryuchen.Close;
 fdm.ins_uchen.Parameters.ParamValues['@fio']:=LabeledEdit6.Text;
 fdm.ins_uchen.Parameters.ParamValues['@phone_m']:= STRTOINT(LabeledEdit7.Text);
 FDM.ins_uchen.Parameters.ParamValues['@adr']:=LabeledEdit8.Text;
-FDM.ins_uchen.Parameters.ParamValues['@DATAR']:=DateToStr(DateTimePicker1.Date);
+FDM.ins_uchen.Parameters.ParamValues['@DATAR']:=DateToStr_(DateTimePicker1.Date);
 FDM.ins_uchen.Parameters.ParamValues['@pol']:=LabeledEdit9.Text;
 FDM.ins_uchen.Parameters.ParamValues['@health_group']:=LabeledEdit11.Text;
-FDM.ins_uchen.Parameters.ParamValues['@Datap']:=DateToStr(DateTimePicker2.Date);
-FDM.ins_uchen.Parameters.ParamValues['@datav']:=DateToStr(DateTimePicker3.Date);
+FDM.ins_uchen.Parameters.ParamValues['@Datap']:=DateToStr_(DateTimePicker2.Date);
+FDM.ins_uchen.Parameters.ParamValues['@datav']:=DateToStr_(DateTimePicker3.Date);
 FDM.ins_uchen.Parameters.ParamValues['@fio_m']:=LabeledEdit11.Text;
 FDM.ins_uchen.Parameters.ParamValues['@citizen']:=LabeledEdit12.Text;
 FDM.ins_uchen.Parameters.ParamValues['@phone_o']:=StrToInt(LabeledEdit13.Text);

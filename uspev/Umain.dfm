@@ -588,9 +588,9 @@ object Fmain: TFmain
           TabOrder = 1
         end
         object DateTimePicker5: TDateTimePicker
-          Left = 145
+          Left = 165
           Top = 78
-          Width = 938
+          Width = 854
           Height = 21
           Anchors = [akLeft, akTop, akRight]
           Date = 44159.995505358800000000
