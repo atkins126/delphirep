@@ -1,7 +1,7 @@
 object DM1: TDM1
   OldCreateOrder = False
-  Height = 487
-  Width = 880
+  Height = 357
+  Width = 528
   object ADOConnection1: TADOConnection
     Connected = True
     ConnectionString = 
@@ -55,14 +55,6 @@ object DM1: TDM1
       'select * from etap')
     Left = 104
     Top = 80
-    object QueryetapN_Etap: TAutoIncField
-      FieldName = 'N_Etap'
-      ReadOnly = True
-    end
-    object QueryetapNam_etap: TStringField
-      FieldName = 'Nam_etap'
-      Size = 100
-    end
   end
   object DSetap: TDataSource
     DataSet = Queryetap
@@ -98,21 +90,6 @@ object DM1: TDM1
       'select * from work')
     Left = 168
     Top = 80
-    object QueryworkN_Work: TAutoIncField
-      FieldName = 'N_Work'
-      ReadOnly = True
-    end
-    object QueryworkNam_work: TStringField
-      FieldName = 'Nam_work'
-      Size = 100
-    end
-    object QueryworkT_days: TWideStringField
-      FieldName = 'T_days'
-      Size = 10
-    end
-    object QueryworkN_Etap: TIntegerField
-      FieldName = 'N_Etap'
-    end
   end
   object DSwork: TDataSource
     DataSet = Querywork
@@ -240,7 +217,6 @@ object DM1: TDM1
         DataType = ftInteger
         Direction = pdReturnValue
         Precision = 10
-        Value = Null
       end
       item
         Name = '@Nam_proect'
@@ -358,7 +334,7 @@ object DM1: TDM1
         Value = 0
       end>
     Left = 368
-    Top = 208
+    Top = 200
   end
   object DSzadanie: TDataSource
     DataSet = Queryzadanie
@@ -376,54 +352,6 @@ object DM1: TDM1
   object DSreport: TDataSource
     DataSet = Queryreport
     Left = 432
-    Top = 152
-  end
-  object Querytest: TADOQuery
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    Parameters = <>
-    SQL.Strings = (
-      
-        'select Rabotnik.Fio,Dolshnost.Nam_dol,Rabotnik.Date_pr, Rabotnik' +
-        '.Iphone, Work.Nam_work,Proect.Nam_proect, Proect.dataendplan'
-      'from Rabotnik'
-      'join Dolshnost on Dolshnost.N_Dol=Rabotnik.N_Dol'
-      'join Zadanie on Zadanie.N_Rab=Rabotnik.N_Rab'
-      'join Work on Zadanie.N_Work=Work.N_Work'
-      'join Proect on Zadanie.N_Proekta=Proect.N_Proekta')
-    Left = 512
-    Top = 80
-    object QuerytestFio: TStringField
-      FieldName = 'Fio'
-      Size = 100
-    end
-    object QuerytestNam_dol: TStringField
-      FieldName = 'Nam_dol'
-      Size = 100
-    end
-    object QuerytestDate_pr: TWideStringField
-      FieldName = 'Date_pr'
-      Size = 10
-    end
-    object QuerytestIphone: TIntegerField
-      FieldName = 'Iphone'
-    end
-    object QuerytestNam_work: TStringField
-      FieldName = 'Nam_work'
-      Size = 100
-    end
-    object QuerytestNam_proect: TStringField
-      FieldName = 'Nam_proect'
-      Size = 100
-    end
-    object Querytestdataendplan: TWideStringField
-      FieldName = 'dataendplan'
-      Size = 10
-    end
-  end
-  object DStest: TDataSource
-    DataSet = Querytest
-    Left = 496
     Top = 152
   end
 end

@@ -10,8 +10,7 @@ uses
   ins_woreker in 'ins_woreker.pas' {fins_woreker},
   ins_proekt in 'ins_proekt.pas' {Fins_proekt},
   ins_zadan in 'ins_zadan.pas' {Fins_zadan},
-  otchet in 'otchet.pas' {fptchet},
-  Utest in 'Utest.pas' {Ftest};
+  otchet in 'otchet.pas' {fptchet};
 
 {$R *.res}
 
@@ -27,6 +26,5 @@ begin
   Application.CreateForm(TFins_proekt, Fins_proekt);
   Application.CreateForm(TFins_zadan, Fins_zadan);
   Application.CreateForm(Tfptchet, fptchet);
-  Application.CreateForm(TFtest, Ftest);
   Application.Run;
 end.

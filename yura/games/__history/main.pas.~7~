@@ -17,7 +17,6 @@ type
     N6: TMenuItem;
     N7: TMenuItem;
     N8: TMenuItem;
-    N9: TMenuItem;
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
@@ -25,7 +24,6 @@ type
     procedure N7Click(Sender: TObject);
     procedure N8Click(Sender: TObject);
     procedure N2Click(Sender: TObject);
-    procedure N9Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,8 +35,7 @@ var
 
 implementation
 
-uses ins_dol, ins_etap, ins_work, ins_woreker, ins_proekt, ins_zadan, otchet,
-  Utest;
+uses ins_dol, ins_etap, ins_work, ins_woreker, ins_proekt, ins_zadan, otchet;
 
 {$R *.dfm}
 
@@ -76,11 +73,6 @@ end;
 procedure TForm1.N8Click(Sender: TObject);
 begin
 Fins_zadan.ShowModal;
-end;
-
-procedure TForm1.N9Click(Sender: TObject);
-begin
-Ftest.ShowModal;
 end;
 
 end.

@@ -77,6 +77,9 @@
 			<DCCReference Include="otchet.pas">
 				<Form>fptchet</Form>
 			</DCCReference>
+			<DCCReference Include="Utest.pas">
+				<Form>Ftest</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
