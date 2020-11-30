@@ -28,7 +28,7 @@ var
 
 implementation
 
-uses Udm, Umain, DB, Umen;
+uses Udm, Umain, DB, Umen, Usotr;
 
 {$R *.dfm}
 
@@ -38,16 +38,18 @@ procedure TFreg.Button1Click(Sender: TObject);
 
 begin
 if ((LabeledEdit1.Text=dm.Querypass.FieldByName('usver_pass').AsString ) and(LabeledEdit1.Text='boss')) then
-//)and (DBLookupComboBox1.Text='руководитель ')
 begin
-//Close;
 Fmain.Show;
 end
 else if ((LabeledEdit1.Text=dm.Querypass.FieldByName('usver_pass').AsString ) and(LabeledEdit1.Text='men'))  then
 begin
-fmen.ShowModal;
+fmen.Show;
 end
-// тут продолжить 
+// тут продолжить
+else if((LabeledEdit1.Text=dM.Querypass.FieldByName('usver_pass').AsString)and(LabeledEdit1.Text='work'))  then
+begin
+Fsotr.Show;
+end
 else
 begin
 ShowMessage('неверный пароль');
@@ -59,8 +61,9 @@ procedure TFreg.FormActivate(Sender: TObject);
 
 begin
 dm.Querypass.Open;
-LabeledEdit1.Text:='boss';
+//LabeledEdit1.Text:='boss';
 //LabeledEdit1.Text:='men';
+LabeledEdit1.Text:='work';
 LabeledEdit1.PasswordChar:='*';
 end;
 
