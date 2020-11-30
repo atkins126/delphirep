@@ -1,0 +1,241 @@
+unit Umen;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ComCtrls, StdCtrls, ExtCtrls, Grids, DBGrids, DBCtrls,DateUtils;
+
+type
+  TFmen = class(TForm)
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    PageControl2: TPageControl;
+    TabSheet3: TTabSheet;
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    LabeledEdit2: TLabeledEdit;
+    Button1: TButton;
+    GroupBox3: TGroupBox;
+    DBGrid1: TDBGrid;
+    TabSheet4: TTabSheet;
+    GroupBox4: TGroupBox;
+    GroupBox5: TGroupBox;
+    GroupBox6: TGroupBox;
+    Button2: TButton;
+    DBGrid2: TDBGrid;
+    LabeledEdit1: TLabeledEdit;
+    Label1: TLabel;
+    DateTimePicker1: TDateTimePicker;
+    Label2: TLabel;
+    DBLookupComboBox1: TDBLookupComboBox;
+    TabSheet5: TTabSheet;
+    GroupBox7: TGroupBox;
+    GroupBox8: TGroupBox;
+    GroupBox9: TGroupBox;
+    Button3: TButton;
+    DBGrid3: TDBGrid;
+    DateTimePicker2: TDateTimePicker;
+    Label3: TLabel;
+    Label4: TLabel;
+    DBLookupComboBox2: TDBLookupComboBox;
+    LabeledEdit3: TLabeledEdit;
+    DateTimePicker3: TDateTimePicker;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    DBLookupComboBox3: TDBLookupComboBox;
+    DBLookupComboBox4: TDBLookupComboBox;
+    TabSheet6: TTabSheet;
+    GroupBox10: TGroupBox;
+    GroupBox11: TGroupBox;
+    GroupBox12: TGroupBox;
+    Button4: TButton;
+    DBGrid4: TDBGrid;
+    LabeledEdit4: TLabeledEdit;
+    DBLookupComboBox5: TDBLookupComboBox;
+    Label8: TLabel;
+    LabeledEdit5: TLabeledEdit;
+    LabeledEdit6: TLabeledEdit;
+    DateTimePicker4: TDateTimePicker;
+    Label9: TLabel;
+    Label10: TLabel;
+    DBLookupComboBox6: TDBLookupComboBox;
+    procedure LabeledEdit2KeyPress(Sender: TObject; var Key: Char);
+    procedure FormActivate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Button1Click(Sender: TObject);
+    function DateToStr_(Dat : TDate): String;
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fmen: TFmen;
+
+implementation
+
+uses Udm, Ureg;
+
+{$R *.dfm}
+procedure TFmen.Button2Click(Sender: TObject);
+begin
+try
+dm.ins_work.Parameters.ParamByName('@Nam_work').Value:=LabeledEdit1.Text;
+dm.ins_work.Parameters.ParamByName('@T_days').Value:=DateToStr_(DateTimePicker1.Date);
+dm.ins_work.Parameters.ParamByName('@N_Etap').Value:=DBLookupComboBox1.KeyValue;
+if(LabeledEdit1.Text='') then
+begin
+MessageDlg('Ошибка ввода наиитнования работы ',mtWarning,[mbAbort],0);
+exit;
+end;
+dm.ins_work.ExecProc;
+dm.Querywork.Close;
+dm.Querywork.sql.clear;
+dm.Querywork.sql.Text:='select * from work';
+dm.Querywork.Open;
+dm.Querywork.Next;
+dm.Querywork.First;
+dm.Querywork.Last;
+except  on e:Exception do
+begin
+MessageDlg('Сбой процедуры ',mtWarning,[mbAbort],0);
+Exit;
+end;
+
+end;
+end;
+
+procedure TFmen.Button3Click(Sender: TObject);
+begin
+try
+dm.ins_zadanie.Parameters.ParamByName('@Sr_vip').Value:=DateToStr_(DateTimePicker2.Date);
+dm.ins_zadanie.Parameters.ParamByName('@N_Rab').Value:=DBLookupComboBox2.KeyValue;
+dm.ins_zadanie.Parameters.ParamByName('@St_rab').Value:=LabeledEdit3.Text;
+dm.Ins_zadanie.Parameters.ParamByName('@Data_nash').Value:=DateToStr_(DateTimePicker3.Date);
+dm.Ins_zadanie.Parameters.ParamByName('@N_Proekta').Value:=DBLookupComboBox3.KeyValue;
+dm.Ins_zadanie.Parameters.ParamByName('@N_Work').Value:=DBLookupComboBox4.KeyValue;
+if (LabeledEdit3.Text='') then
+begin
+MessageDlg('проверьте поля ',mtWarning,[mbAbort],0);
+exit;
+end;
+dm.ins_zadanie.ExecProc;
+dm.Querytask.Close;
+dm.Querytask.sql.Clear;
+dm.Querytask.sql.text:='select * from zadanie';
+dm.Querytask.Open;
+dm.Querytask.Next;
+dm.Querytask.First;
+dm.Querytask.last;
+except on e:Exception do
+begin
+MessageDlg('Сбой процедуры ',mtWarning,[mbAbort],0);
+Exit;
+end;
+end;
+end;
+
+procedure TFmen.Button4Click(Sender: TObject);
+begin
+try
+dm.ins_rabotnic.Parameters.ParamByName('@Fio').Value:=LabeledEdit4.Text;
+dm.ins_rabotnic.Parameters.ParamByName('@N_dol').Value:=DBLookupComboBox5.KeyValue;
+dm.ins_rabotnic.Parameters.ParamByName('@Iphone').Value:=StrToInt(LabeledEdit5.Text);
+dm.ins_rabotnic.Parameters.ParamByName('@St_rab').Value:=LabeledEdit6.Text;
+dm.ins_rabotnic.Parameters.ParamByName('@Date_pr').Value:=DateToStr_(DateTimePicker4.Date);
+dm.ins_rabotnic.Parameters.ParamByName('@usverid').Value:=DBLookupComboBox6.KeyValue;
+if ((LabeledEdit4.Text='')or(LabeledEdit5.Text='')or(LabeledEdit6.Text='')) then
+begin
+MessageDlg('Сбой процедуры  ',mtWarning,[mbAbort],0);
+Exit;
+end;
+dm.ins_rabotnic.ExecProc;
+MessageDlg('Изменнеия внесены  ',mtInformation,[mbOK],0);
+dm.Queryrabotnik.Close;
+dm.Queryrabotnik.sql.Clear;
+dm.Queryrabotnik.sql.text:='select * from rabotnik';
+dm.Queryrabotnik.Open;
+dm.Queryrabotnik.Next;
+dm.Queryrabotnik.First;
+dm.Queryrabotnik.Last;
+except on e:Exception do
+begin
+MessageDlg('Сбой процедуры  ',mtWarning,[mbAbort],0);
+Exit;
+end;
+end;
+end;
+
+function Tfmen.DateToStr_(Dat : TDate): String;
+begin
+  Result:= IntToStr(MonthOf(Dat))+'.'
+  +IntToStr(DayOf(Dat))+'.'
+  +IntToStr(YearOf(Dat));
+end;
+
+
+procedure TFmen.Button1Click(Sender: TObject);
+begin
+try
+dm.ins_etap.Parameters.ParamByName('@Nam_etap').Value:=LabeledEdit2.Text;
+if LabeledEdit2.Text='' then
+begin
+MessageDlg('Ошибка ввода  названия этапа ',mtWarning,[mbAbort],0);
+Exit;
+end;
+dm.ins_etap.ExecProc;
+MessageDlg('Изменения внесены',mtInformation,[mbYes],0);
+dm.etapQuery.Close;
+dm.etapQuery.sql.Clear;
+dm.etapQuery.sql.Text:='select * from etap';
+dm.etapQuery.Open;
+dm.etapQuery.Next;
+dm.etapQuery.First;
+dm.etapQuery.Last;
+Except on e:Exception do
+begin
+MessageDlg('Ошибка ввода этапа ',mtWarning,[mbAbort],0);
+Exit;
+end;
+end;
+end;
+
+procedure TFmen.FormActivate(Sender: TObject);
+begin
+dm.etapQuery.Open;
+dm.Querywork.Open;
+dm.Querytask.Open;
+dm.Queryproekt.Open;
+dm.Queryrabotnik.Open;
+dm.Querypass.Open;
+dm.Querydol.Open;
+end;
+
+procedure TFmen.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+dm.etapQuery.close;
+dm.Querywork.Close;
+dm.Querytask.Close;
+dm.Queryproekt.Close;
+dm.Queryrabotnik.Close;
+dm.Querypass.Close;
+dm.Querydol.Close;
+end;
+
+procedure TFmen.LabeledEdit2KeyPress(Sender: TObject; var Key: Char);
+begin
+if  not    ( key in ['а'..'я', 'А'..'Я', '1'..'9','0']) then
+begin
+  ShowMessage('не тот знак');
+  exit;
+end;
+end;
+
+end.

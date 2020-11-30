@@ -2,7 +2,7 @@ object Fmain: TFmain
   Left = 0
   Top = 0
   Caption = #1043#1083#1072#1074#1085#1072#1103' '#1092#1086#1088#1084#1072
-  ClientHeight = 743
+  ClientHeight = 823
   ClientWidth = 992
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -20,14 +20,14 @@ object Fmain: TFmain
     Left = 0
     Top = 0
     Width = 992
-    Height = 743
-    ActivePage = TabSheet1
+    Height = 823
+    ActivePage = TabSheet2
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 723
+    ExplicitHeight = 803
     object TabSheet1: TTabSheet
       Caption = 'SelectS'
-      ExplicitHeight = 695
+      ExplicitHeight = 775
       object GroupBox1: TGroupBox
         Left = 0
         Top = 0
@@ -74,9 +74,9 @@ object Fmain: TFmain
         end
         object GroupBox7: TGroupBox
           Left = 2
-          Top = 15
+          Top = 56
           Width = 185
-          Height = 200
+          Height = 159
           Align = alLeft
           TabOrder = 4
           object RadioButton3: TRadioButton
@@ -116,15 +116,51 @@ object Fmain: TFmain
             OnClick = RadioButton6Click
           end
         end
+        object Panel3: TPanel
+          Left = 2
+          Top = 15
+          Width = 980
+          Height = 41
+          Align = alTop
+          TabOrder = 5
+          object Label5: TLabel
+            Left = 248
+            Top = 8
+            Width = 3
+            Height = 13
+            OnClick = Label5Click
+          end
+          object Label6: TLabel
+            Left = 456
+            Top = 16
+            Width = 3
+            Height = 13
+            OnClick = Label6Click
+          end
+          object Label8: TLabel
+            Left = 826
+            Top = 22
+            Width = 3
+            Height = 13
+            OnClick = Label8Click
+          end
+          object Label7: TLabel
+            Left = 642
+            Top = 22
+            Width = 3
+            Height = 13
+            OnClick = Label7Click
+          end
+        end
       end
       object GroupBox2: TGroupBox
         Left = 0
-        Top = 652
+        Top = 732
         Width = 984
         Height = 63
         Align = alBottom
         TabOrder = 1
-        ExplicitTop = 632
+        ExplicitTop = 712
         object Button1: TButton
           Left = 2
           Top = 15
@@ -140,10 +176,10 @@ object Fmain: TFmain
         Left = 0
         Top = 217
         Width = 984
-        Height = 435
+        Height = 515
         Align = alClient
         TabOrder = 2
-        ExplicitHeight = 415
+        ExplicitHeight = 495
         object GroupBox3: TGroupBox
           Left = 1
           Top = 1
@@ -171,11 +207,11 @@ object Fmain: TFmain
           Left = 1
           Top = 202
           Width = 982
-          Height = 232
+          Height = 312
           Align = alClient
           Caption = #1042#1074#1086#1076' '#1079#1072#1087#1088#1086#1089' '#1072
           TabOrder = 1
-          ExplicitHeight = 212
+          ExplicitHeight = 292
           object Memo1: TMemo
             Left = 2
             Top = 15
@@ -191,11 +227,12 @@ object Fmain: TFmain
             Left = 2
             Top = 137
             Width = 978
-            Height = 93
+            Height = 173
             Align = alClient
             Caption = #1090#1077#1089#1090' '#1079#1072#1087#1088#1086#1089#1072
             TabOrder = 1
-            ExplicitHeight = 73
+            OnClick = Button1Click
+            ExplicitHeight = 153
             object Button2: TButton
               Left = 2
               Top = 15
@@ -209,11 +246,11 @@ object Fmain: TFmain
               Left = 640
               Top = 15
               Width = 336
-              Height = 76
+              Height = 156
               Align = alRight
               Caption = #1087#1088#1086#1074#1077#1088#1082#1072' '#1079#1072#1087#1088#1086#1089#1072
               TabOrder = 1
-              ExplicitHeight = 56
+              ExplicitHeight = 136
               object RadioButton1: TRadioButton
                 Left = 208
                 Top = 24
@@ -233,6 +270,48 @@ object Fmain: TFmain
                 OnClick = RadioButton2Click
               end
             end
+            object GroupBox15: TGroupBox
+              Left = 190
+              Top = 15
+              Width = 450
+              Height = 156
+              Align = alRight
+              Caption = ' '#1057#1083#1091#1078#1077#1073#1085#1099#1077' '#1057#1083#1086#1074#1072' '
+              TabOrder = 2
+              ExplicitHeight = 136
+              object Label9: TLabel
+                Left = 3
+                Top = 24
+                Width = 22
+                Height = 13
+                Caption = 'from'
+                OnClick = Label9Click
+              end
+              object Label10: TLabel
+                Left = 3
+                Top = 43
+                Width = 30
+                Height = 13
+                Caption = 'where'
+                OnClick = Label10Click
+              end
+              object Label11: TLabel
+                Left = 3
+                Top = 62
+                Width = 27
+                Height = 13
+                Caption = 'count'
+                OnClick = Label11Click
+              end
+              object Label12: TLabel
+                Left = 3
+                Top = 81
+                Width = 20
+                Height = 13
+                Caption = 'Sum'
+                OnClick = Label12Click
+              end
+            end
           end
         end
       end
@@ -240,7 +319,7 @@ object Fmain: TFmain
     object TabSheet2: TTabSheet
       Caption = 'inserts'
       ImageIndex = 1
-      ExplicitHeight = 695
+      ExplicitHeight = 775
       object GroupBox8: TGroupBox
         Left = 0
         Top = 0
@@ -257,7 +336,7 @@ object Fmain: TFmain
           ItemHeight = 13
           TabOrder = 0
           Visible = False
-          OnClick = ListBox1Click
+          OnClick = ListBox5Click
         end
         object ListBox6: TListBox
           Left = 800
@@ -267,7 +346,7 @@ object Fmain: TFmain
           ItemHeight = 13
           TabOrder = 1
           Visible = False
-          OnClick = ListBox2Click
+          OnClick = ListBox6Click
         end
         object ListBox7: TListBox
           Left = 432
@@ -277,7 +356,7 @@ object Fmain: TFmain
           ItemHeight = 13
           TabOrder = 2
           Visible = False
-          OnClick = ListBox3Click
+          OnClick = ListBox7Click
         end
         object ListBox8: TListBox
           Left = 208
@@ -291,9 +370,9 @@ object Fmain: TFmain
         end
         object GroupBox9: TGroupBox
           Left = 2
-          Top = 15
+          Top = 56
           Width = 185
-          Height = 200
+          Height = 159
           Align = alLeft
           TabOrder = 4
           object RadioButton7: TRadioButton
@@ -312,6 +391,7 @@ object Fmain: TFmain
             Height = 17
             Caption = 'stud'
             TabOrder = 1
+            OnClick = RadioButton8Click
           end
           object RadioButton9: TRadioButton
             Left = 3
@@ -320,25 +400,63 @@ object Fmain: TFmain
             Height = 17
             Caption = 'grupp'
             TabOrder = 2
+            OnClick = RadioButton9Click
           end
           object RadioButton10: TRadioButton
             Left = 3
             Top = 143
-            Width = 113
+            Width = 70
             Height = 17
             Caption = 'kaph'
             TabOrder = 3
+            OnClick = RadioButton10Click
+          end
+        end
+        object Panel2: TPanel
+          Left = 2
+          Top = 15
+          Width = 980
+          Height = 41
+          Align = alTop
+          TabOrder = 5
+          object Label1: TLabel
+            Left = 248
+            Top = 8
+            Width = 3
+            Height = 13
+            OnClick = Label1Click
+          end
+          object Label2: TLabel
+            Left = 456
+            Top = 16
+            Width = 3
+            Height = 13
+            OnClick = Label2Click
+          end
+          object Label3: TLabel
+            Left = 641
+            Top = 14
+            Width = 3
+            Height = 13
+            OnClick = Label3Click
+          end
+          object Label4: TLabel
+            Left = 810
+            Top = 14
+            Width = 3
+            Height = 13
+            OnClick = Label4Click
           end
         end
       end
       object GroupBox10: TGroupBox
         Left = 0
-        Top = 652
+        Top = 732
         Width = 984
         Height = 63
         Align = alBottom
         TabOrder = 1
-        ExplicitTop = 632
+        ExplicitTop = 712
         object Button3: TButton
           Left = 2
           Top = 15
@@ -377,11 +495,11 @@ object Fmain: TFmain
         Left = 0
         Top = 418
         Width = 984
-        Height = 234
+        Height = 314
         Align = alClient
         Caption = #1042#1074#1086#1076' '#1079#1072#1087#1088#1086#1089' '#1072
         TabOrder = 3
-        ExplicitHeight = 214
+        ExplicitHeight = 294
         object Memo2: TMemo
           Left = 2
           Top = 15
@@ -397,11 +515,11 @@ object Fmain: TFmain
           Left = 2
           Top = 137
           Width = 980
-          Height = 95
+          Height = 175
           Align = alClient
           Caption = #1090#1077#1089#1090' '#1079#1072#1087#1088#1086#1089#1072
           TabOrder = 1
-          ExplicitHeight = 75
+          ExplicitHeight = 155
           object Button4: TButton
             Left = 2
             Top = 15
@@ -409,17 +527,17 @@ object Fmain: TFmain
             Height = 56
             Caption = #1090#1077#1089#1090' '#1079#1072#1087#1088#1086#1089#1072
             TabOrder = 0
-            OnClick = Button2Click
+            OnClick = Button4Click
           end
           object GroupBox14: TGroupBox
             Left = 642
             Top = 15
             Width = 336
-            Height = 78
+            Height = 158
             Align = alRight
             Caption = #1087#1088#1086#1074#1077#1088#1082#1072' '#1079#1072#1087#1088#1086#1089#1072
             TabOrder = 1
-            ExplicitHeight = 58
+            ExplicitHeight = 138
             object RadioButton11: TRadioButton
               Left = 208
               Top = 24
@@ -439,16 +557,60 @@ object Fmain: TFmain
               OnClick = RadioButton2Click
             end
           end
+          object GroupBox16: TGroupBox
+            Left = 192
+            Top = 15
+            Width = 450
+            Height = 158
+            Align = alRight
+            Caption = ' '#1057#1083#1091#1078#1077#1073#1085#1099#1077' '#1057#1083#1086#1074#1072' '
+            TabOrder = 2
+            ExplicitHeight = 138
+            object Label13: TLabel
+              Left = 3
+              Top = 24
+              Width = 22
+              Height = 13
+              Caption = 'from'
+              OnClick = Label13Click
+            end
+            object Label14: TLabel
+              Left = 56
+              Top = 27
+              Width = 30
+              Height = 13
+              Caption = 'where'
+              OnClick = Label14Click
+            end
+            object Label15: TLabel
+              Left = 3
+              Top = 62
+              Width = 27
+              Height = 13
+              Caption = 'count'
+              OnClick = Label15Click
+            end
+            object Label16: TLabel
+              Left = 56
+              Top = 65
+              Width = 20
+              Height = 13
+              Caption = 'Sum'
+              OnClick = Label16Click
+            end
+          end
         end
       end
     end
     object TabSheet3: TTabSheet
       Caption = 'TabSheet3'
       ImageIndex = 2
+      ExplicitHeight = 775
     end
     object TabSheet4: TTabSheet
       Caption = 'TabSheet4'
       ImageIndex = 3
+      ExplicitHeight = 775
     end
   end
   object SD1: TSaveDialog
@@ -460,8 +622,8 @@ object Fmain: TFmain
     Top = 680
   end
   object MainMenu1: TMainMenu
-    Left = 336
-    Top = 672
+    Left = 24
+    Top = 648
     object N1: TMenuItem
       Caption = #1057#1086#1079#1076#1072#1090#1100
       OnClick = N1Click
@@ -474,33 +636,50 @@ object Fmain: TFmain
       Caption = #1054#1090#1082#1088#1099#1090#1100
       OnClick = N3Click
     end
+    object N5: TMenuItem
+      Caption = #1054#1095#1080#1089#1090#1082#1072
+      OnClick = N5Click
+    end
     object N4: TMenuItem
       Caption = #1042#1099#1081#1090#1080
       OnClick = N4Click
     end
+    object N6: TMenuItem
+      Caption = #1064#1088#1080#1092#1090' '#1080' '#1094#1074#1077#1090
+      OnClick = N6Click
+    end
   end
   object Od1: TOpenDialog
-    Left = 168
-    Top = 672
+    Left = 152
+    Top = 656
   end
   object OD2: TOpenDialog
-    Left = 208
-    Top = 672
+    Left = 144
+    Top = 688
   end
   object SD3: TSaveDialog
     Left = 24
     Top = 680
   end
   object OD3: TOpenDialog
-    Left = 248
-    Top = 672
+    Left = 64
+    Top = 648
   end
   object OD4: TOpenDialog
-    Left = 296
-    Top = 672
+    Left = 168
+    Top = 680
   end
   object SD4: TSaveDialog
-    Left = 392
-    Top = 680
+    Left = 104
+    Top = 648
+  end
+  object FD1: TFontDialog
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Left = 256
+    Top = 65528
   end
 end

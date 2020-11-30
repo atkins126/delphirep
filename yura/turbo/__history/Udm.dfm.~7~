@@ -1,0 +1,47 @@
+object dM: TdM
+  OldCreateOrder = False
+  Height = 269
+  Width = 359
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
+      'fo=False;Initial Catalog=Razrab_Andryuschenko'
+    LoginPrompt = False
+    Provider = 'SQLOLEDB.1'
+    Left = 8
+    Top = 8
+  end
+  object Querypass: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select  *  from usver')
+    Left = 72
+    Top = 80
+    object QuerypassusverId: TAutoIncField
+      FieldName = 'usverId'
+      ReadOnly = True
+    end
+    object Querypassusver_role: TStringField
+      FieldName = 'usver_role'
+      Size = 50
+    end
+    object Querypassusver_pass: TStringField
+      FieldName = 'usver_pass'
+      Size = 50
+    end
+  end
+  object DSpass: TDataSource
+    DataSet = Querypass
+    Left = 80
+    Top = 144
+  end
+  object ins_proect: TADOStoredProc
+    Connection = ADOConnection1
+    Parameters = <>
+    Left = 80
+    Top = 200
+  end
+end

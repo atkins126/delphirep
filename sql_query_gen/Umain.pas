@@ -69,6 +69,29 @@ type
     OD3: TOpenDialog;
     OD4: TOpenDialog;
     SD4: TSaveDialog;
+    N5: TMenuItem;
+    Panel2: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Panel3: TPanel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label8: TLabel;
+    Label7: TLabel;
+    GroupBox15: TGroupBox;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    GroupBox16: TGroupBox;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    N6: TMenuItem;
+    FD1: TFontDialog;
     procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button2Click(Sender: TObject);
@@ -89,6 +112,31 @@ type
     procedure N3Click(Sender: TObject);
     procedure RadioButton7Click(Sender: TObject);
     procedure ListBox8Click(Sender: TObject);
+    procedure RadioButton8Click(Sender: TObject);
+    procedure RadioButton9Click(Sender: TObject);
+    procedure N5Click(Sender: TObject);
+    procedure RadioButton10Click(Sender: TObject);
+    procedure ListBox7Click(Sender: TObject);
+    procedure ListBox5Click(Sender: TObject);
+    procedure ListBox6Click(Sender: TObject);
+    procedure Label5Click(Sender: TObject);
+    procedure Label9Click(Sender: TObject);
+    procedure Label10Click(Sender: TObject);
+    procedure Label11Click(Sender: TObject);
+    procedure Label12Click(Sender: TObject);
+    procedure Label13Click(Sender: TObject);
+    procedure Label15Click(Sender: TObject);
+    procedure Label14Click(Sender: TObject);
+    procedure Label16Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Label1Click(Sender: TObject);
+    procedure Label2Click(Sender: TObject);
+    procedure Label3Click(Sender: TObject);
+    procedure Label4Click(Sender: TObject);
+    procedure Label6Click(Sender: TObject);
+    procedure Label7Click(Sender: TObject);
+    procedure Label8Click(Sender: TObject);
+    procedure N6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -112,12 +160,20 @@ fdm.querytest.SQL.Clear;
 fdm.querytest.SQL.Text:=str;
 ShowMessage(fdm.querytest.SQL.Text);
 fdm.querytest.Open;
+//
 end;
 
 procedure TFmain.Button2Click(Sender: TObject);
 
 begin
 str:=Memo1.Text;
+ShowMessage(str);
+ShowMessage( fdm.querytest.SQL.Text);
+end;
+
+procedure TFmain.Button4Click(Sender: TObject);
+begin
+str:=Memo2.Text;
 ShowMessage(str);
 ShowMessage( fdm.querytest.SQL.Text);
 end;
@@ -137,7 +193,15 @@ if (Controls[i] is TListBox) then
 begin
 (Controls[i] as TListBox).Visible:=False;
 end;
-
+ with Fmain do
+ for I := 0 to ControlCount - 1 do
+ begin
+ if Controls[i] is TDBGrid then
+ begin
+ (Controls[i] as TDBGrid).ReadOnly:=true;
+ end;
+ end;
+   
 end;
 
 procedure TFmain.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -156,6 +220,86 @@ for I := 0 to ControlCount - 1 do
       (Controls[i] as TRadioButton).Enabled:=True;
     end;
   end;
+end;
+
+procedure TFmain.Label10Click(Sender: TObject);
+begin
+Memo1.Lines.Add(Label10.Caption);
+end;
+
+procedure TFmain.Label11Click(Sender: TObject);
+begin
+Memo1.Lines.Add(Label11.Caption);
+end;
+
+procedure TFmain.Label12Click(Sender: TObject);
+begin
+Memo1.Lines.Add(Label12.Caption);
+end;
+
+procedure TFmain.Label13Click(Sender: TObject);
+begin
+Memo2.Lines.Add(Label13.Caption);
+end;
+
+procedure TFmain.Label14Click(Sender: TObject);
+begin
+Memo2.Lines.Add(Label14.Caption);
+end;
+
+procedure TFmain.Label15Click(Sender: TObject);
+begin
+Memo2.Lines.Add(Label15.Caption);
+end;
+
+procedure TFmain.Label16Click(Sender: TObject);
+begin
+Memo2.Lines.Add(Label16.Caption);
+end;
+
+procedure TFmain.Label1Click(Sender: TObject);
+begin
+Memo2.Lines.Add(Label1.Caption+'()');
+end;
+
+procedure TFmain.Label2Click(Sender: TObject);
+begin
+Memo2.Lines.Add(Label2.Caption+'()')
+end;
+
+procedure TFmain.Label3Click(Sender: TObject);
+begin
+Memo2.Lines.Add(Label3.Caption+'()');
+end;
+
+procedure TFmain.Label4Click(Sender: TObject);
+begin
+Memo2.Lines.Add(Label4.Caption+'()');
+end;
+
+procedure TFmain.Label5Click(Sender: TObject);
+begin
+Memo1.Lines.Add(Label5.Caption);
+end;
+
+procedure TFmain.Label6Click(Sender: TObject);
+begin
+Memo1.Lines.Add(Label6.Caption);
+end;
+
+procedure TFmain.Label7Click(Sender: TObject);
+begin
+Memo1.Lines.Add(Label7.Caption);
+end;
+
+procedure TFmain.Label8Click(Sender: TObject);
+begin
+Memo1.Lines.Add(Label8.Caption);
+end;
+
+procedure TFmain.Label9Click(Sender: TObject);
+begin
+Memo1.Lines.Add(Label9.Caption);
 end;
 
 procedure TFmain.ListBox1Click(Sender: TObject);
@@ -196,6 +340,33 @@ end;
   
 end;
 
+procedure TFmain.ListBox5Click(Sender: TObject);
+var i:Integer;
+begin
+for I := 0 to ListBox5.Items.Count - 1 do
+  begin
+    if  ListBox5.Selected[i] then Memo2.Lines.Add(ListBox5.Items.Strings[i]);   
+  end;
+end;
+
+procedure TFmain.ListBox6Click(Sender: TObject);
+var i:Integer;
+begin
+for I := 0 to ListBox6.Items.Count - 1 do
+  begin
+    if ListBox6.Selected[i] then Memo2.Lines.Add(ListBox6.Items.Strings[i]);   
+  end;
+end;
+
+procedure TFmain.ListBox7Click(Sender: TObject);
+var i:Integer;
+begin
+for I := 0 to ListBox7.Items.Count - 1 do
+  begin
+if ListBox7.Selected[i] then Memo2.Lines.Add(ListBox7.Items.Strings[i]);
+  end;
+end;
+
 procedure TFmain.ListBox8Click(Sender: TObject);
 var i:Integer;
 begin
@@ -207,15 +378,27 @@ if ListBox8.Selected[i] then Memo2.Lines.Add(ListBox8.Items.Strings[i]);
 end;
 
 procedure TFmain.N1Click(Sender: TObject);
+var ai:boolean;
+var p,p1:TPoint;
 begin
+p.Y:=0;
+p.X:=7;
+p1.y:=0;
+p1.X:=12;
+ai:=true;
 Memo1.Visible:=true;
-Memo1.SetFocus;
+Memo2.Visible:=true;
 Memo1.Clear;
+Memo2.Clear;
+Memo1.SetFocus;
 Memo1.SelStart:=0;
-PageControl1.ActivePageIndex:=0;
-if PageControl1.ActivePageIndex=0 then
+Memo2.SelStart:=0;
+if ai=true then
 begin
 Memo1.Lines.Add('select');
+Memo1.CaretPos:=p;
+Memo2.Lines.Add('insert into ');
+Memo2.CaretPos:=p1;
 end;
 
 
@@ -247,6 +430,47 @@ begin
 Close;
 end;
 
+procedure TFmain.N5Click(Sender: TObject);
+
+begin
+Memo1.Clear;
+Memo2.Clear;
+end;
+
+procedure TFmain.N6Click(Sender: TObject);
+
+begin
+if  FD1.Execute then
+begin
+   Memo1.Font:=fd1.Font;
+   Memo1.font.Size:=fd1.Font.Size;
+   Memo1.Font.Color:=FD1.Font.Color;
+   Memo2.Font:=fd1.Font;
+   Memo2.font.Size:=fd1.Font.Size;
+   Memo2.Font.Color:=FD1.Font.Color;
+end;
+
+
+end;
+
+
+
+
+procedure TFmain.RadioButton10Click(Sender: TObject);
+var i:Integer;
+begin
+Label4.Caption:=RadioButton10.Caption;
+ListBox6.Visible:=true;
+fdm.Querykaph.Open;
+fdm.Querykaph.First;
+for I := 0 to fdm.Querykaph.FieldCount - 1 do
+  begin
+ListBox6.Items.Add(fDM.Querykaph.Fields[i].FieldName);
+  end;
+fdm.Querykaph.Close;
+RadioButton10.Enabled:=False;
+end;
+
 procedure TFmain.RadioButton1Click(Sender: TObject);
 begin
 RadioButton1.Checked:=true;
@@ -272,6 +496,7 @@ procedure TFmain.RadioButton3Click(Sender: TObject);
 var i:Integer;
 begin
 ListBox4.Visible:=true;
+Label5.Caption:=RadioButton3.Caption;
 fdm.Queryspec.Open;
 fdm.Queryspec.First;
 for i:=0 to fDM.Queryspec.FieldCount-1 do
@@ -286,6 +511,7 @@ procedure TFmain.RadioButton4Click(Sender: TObject);
 var i:Integer;
 begin
 ListBox3.Visible:=true;
+Label6.Caption:=RadioButton4.Caption;
 fdm.Querystud.Open;
 fdm.Querystud.First;
 for I := 0 to fdm.Querystud.FieldCount - 1 do
@@ -299,6 +525,7 @@ end;
 procedure TFmain.RadioButton5Click(Sender: TObject);
 var i:Integer;
 begin
+Label7.Caption:=RadioButton5.Caption;
 ListBox1.Visible:=true;
 fdm.Querygrupp.open;
 fdm.Querygrupp.First;
@@ -313,6 +540,7 @@ end;
 procedure TFmain.RadioButton6Click(Sender: TObject);
 var i:Integer;
 begin
+Label8.Caption:=RadioButton6.Caption;
 ListBox2.Visible:=true;
 fdm.Querykaph.Open;
 fdm.Querykaph.First;
@@ -327,14 +555,45 @@ end;
 procedure TFmain.RadioButton7Click(Sender: TObject);
 var i:Integer;
 begin
+Label1.Caption:=RadioButton7.Caption;
 ListBox8.Visible:=true;
 fDM.Queryspec.Open;
 for I := 0 to fdm.Queryspec.FieldCount - 1 do
   begin
-  ListBox8.Items.Add(fDM.Queryspec.Fields[i].FullName);
+  ListBox8.Items.Add(fDM.Queryspec.Fields[i].FieldName);
   end;
 fdm.Queryspec.Close;
 RadioButton7.Enabled:=False;
+end;
+
+procedure TFmain.RadioButton8Click(Sender: TObject);
+var i:Integer;
+begin
+Label2.Caption:=RadioButton8.Caption;
+fdm.Querystud.Open;
+fdm.Querystud.first;
+ListBox7.Visible:=true;
+for I := 0 to fdm.Querystud.FieldCount - 1 do
+begin
+ ListBox7.Items.Add(fdm.Querystud.Fields[i].FieldName)
+end;
+fdm.Querystud.Close;
+RadioButton8.Enabled:=False;
+end;
+
+procedure TFmain.RadioButton9Click(Sender: TObject);
+var i:integer;
+begin
+Label3.Caption:=RadioButton9.Caption;
+ListBox5.Visible:=true;
+fdm.Querygrupp.Open;
+fdm.Querygrupp.first;
+for I := 0 to fdm.Querygrupp.FieldCount - 1 do
+  begin
+    ListBox5.Items.Add(fdm.Querygrupp.Fields[i].FieldName);
+  end;
+fdm.Querygrupp.Close;
+RadioButton9.Enabled:=False;
 end;
 
 end.

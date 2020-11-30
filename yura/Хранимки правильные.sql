@@ -1,12 +1,4 @@
 --use Razrab_Andryuschenko
-alter proc ins_dol
-@Nam_dol varchar(100)
-as 
-begin
-insert into Dolshnost(Nam_dol) values(@Nam_dol)
-end
---exec ins_dol  '�������������'
---select * from Dolshnost
 
 alter proc ins_etap
 @Nam_etap varchar(150)
@@ -28,7 +20,14 @@ insert into Proect ( Nam_proect,janr,data_nash,menager) values(@Nam_proect,@janr
 end
 exec ins_proect  '�����2', '���������','2020-12-03','������'
 select * from Proect
-create proc ins_rabotnic
+USE [Razrab_Andryuschenko]
+GO
+/****** Object:  StoredProcedure [dbo].[ins_rabotnic]    Script Date: 29.11.2020 16:21:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[ins_rabotnic]
 @Fio varchar(100),
 @N_Dol  int,
 @Iphone int,
@@ -38,7 +37,7 @@ as
 begin
 insert into Rabotnik(Fio,N_Dol,Iphone ,St_rab ,Date_pr) values(@Fio,@N_Dol,@Iphone,@St_rab,@Date_pr)
 end
-exec ins_rabotnic '������ ',1,234,'2020-03-02','2020-03-02'
+
 select  * from Rabotnik
 create proc upd_rab
 @N_rab int,
@@ -124,6 +123,27 @@ as
 begin
 insert into Proect ( Nam_proect,janr,data_nash,menager,cost_plan, cost_fact,dataendplan ) values(@Nam_proect,@janr,@data_nash,@menager,@cost_plan,@cost_fact, @dataendplan)
 end
+--use Razrab_Andryuschenko
+alter proc ins_manager
+@fio varchar(50),
+@usverid int
+as
+begin
+insert into  manager(fio,usverid)values(@fio,@usverid)
+end
+exec ins_manager 'Петров2',2
+select * from manager
+
+
+ALTER proc [dbo].[ins_dol]
+@Nam_dol varchar(100),
+@id_manager int 
+as 
+begin
+insert into Dolshnost(Nam_dol,id_manager) values(@Nam_dol,@id_manager)
+end
+select * from Dolshnost
+exec ins_dol 'Гидровик',1
 
 
 

@@ -1,0 +1,19 @@
+program Project1;
+
+uses
+  Forms,
+  Umain in 'Umain.pas' {Fmain},
+  Udm in 'Udm.pas' {dM: TDataModule},
+  Ureg in 'Ureg.pas' {Freg},
+  Umen in 'Umen.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFmain, Fmain);
+  Application.CreateForm(TdM, dM);
+  Application.CreateForm(TFreg, Freg);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.
