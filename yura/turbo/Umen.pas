@@ -62,10 +62,6 @@ type
     DateTimePicker4: TDateTimePicker;
     DBLookupComboBox6: TDBLookupComboBox;
     TabSheet2: TTabSheet;
-    PageControl3: TPageControl;
-    TabSheet7: TTabSheet;
-    TabSheet8: TTabSheet;
-    TabSheet9: TTabSheet;
     TabSheet10: TTabSheet;
     GroupBox13: TGroupBox;
     GroupBox14: TGroupBox;
@@ -76,6 +72,15 @@ type
     Label11: TLabel;
     Label12: TLabel;
     DateTimePicker5: TDateTimePicker;
+    PageControl3: TPageControl;
+    TabSheet7: TTabSheet;
+    GroupBox16: TGroupBox;
+    Label13: TLabel;
+    DateTimePicker6: TDateTimePicker;
+    GroupBox17: TGroupBox;
+    DBGrid6: TDBGrid;
+    Label14: TLabel;
+    DBLookupComboBox8: TDBLookupComboBox;
     procedure LabeledEdit2KeyPress(Sender: TObject; var Key: Char);
     procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -85,6 +90,8 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure DBLookupComboBox8Click(Sender: TObject);
+    procedure DateTimePicker6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -218,6 +225,23 @@ end;
 end;
 end;
 
+procedure TFmen.DateTimePicker6Click(Sender: TObject);
+begin
+try
+//exec report2 1, '2020-12-12'
+dm.Queryot.Close;
+dm.Queryot.SQL.Clear;
+dm.Queryot.SQL.Text:='exec report2 ' +dm.Queryproekt.FieldByName('N_proekta').AsString+ ',' +QuotedStr(DateToStr_(DateTimePicker4.Date)) ;
+dm.Queryot.ExecSQL;
+dm.Queryot.Open;
+except on e:Exception do
+begin
+ShowMessage('не удалось выполнить запрос');
+exit;
+end;
+end;
+end;
+
 function Tfmen.DateToStr_(Dat : TDate): String;
 begin
   Result:= IntToStr(MonthOf(Dat))+'.'
@@ -225,6 +249,24 @@ begin
   +IntToStr(YearOf(Dat));
 end;
 
+
+procedure TFmen.DBLookupComboBox8Click(Sender: TObject);
+begin
+try
+//exec report2 1, '2020-12-12'
+dm.Queryot.Close;
+dm.Queryot.SQL.Clear;
+dm.Queryot.SQL.Text:='exec report2 ' +dm.Queryproekt.FieldByName('N_proekta').AsString+ ',' +QuotedStr(DateToStr_(DateTimePicker4.Date)) ;
+dm.Queryot.ExecSQL;
+dm.Queryot.Open;
+except on e:Exception do
+begin
+ShowMessage('не удалось выполнить запрос');
+exit;
+end;
+end;
+
+end;
 
 procedure TFmen.Button1Click(Sender: TObject);
 begin
@@ -262,6 +304,7 @@ dm.Queryrabotnik.Open;
 dm.Querypass.Open;
 dm.Querydol.Open;
 dm.Queryuv.Open;
+dm.Queryot.Open;
 end;
 
 procedure TFmen.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -274,6 +317,7 @@ dm.Queryrabotnik.Close;
 dm.Querypass.Close;
 dm.Querydol.Close;
 dm.Queryuv.Close;
+dm.Queryot.Close;
 end;
 
 procedure TFmen.LabeledEdit2KeyPress(Sender: TObject; var Key: Char);

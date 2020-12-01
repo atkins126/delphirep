@@ -14,9 +14,11 @@ type
     DBLookupComboBox1: TDBLookupComboBox;
     Label1: TLabel;
     LabeledEdit1: TLabeledEdit;
+    Label2: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Label2DblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,7 +30,7 @@ var
 
 implementation
 
-uses Udm, Umain, DB, Umen, Usotr;
+uses Udm, Umain, DB, Umen, Usotr, Uadmpass;
 
 {$R *.dfm}
 
@@ -70,6 +72,11 @@ end;
 procedure TFreg.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
 dm.Querypass.Close;
+end;
+
+procedure TFreg.Label2DblClick(Sender: TObject);
+begin
+Fadminpass.ShowModal;
 end;
 
 end.

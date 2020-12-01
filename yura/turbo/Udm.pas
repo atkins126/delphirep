@@ -56,6 +56,14 @@ type
     Queryuv: TADOQuery;
     upd_rab: TADOStoredProc;
     DsUv: TDataSource;
+    Querysearch: TADOQuery;
+    DSsearch: TDataSource;
+    Querytasklist: TADOQuery;
+    DStasklist: TDataSource;
+    sel_task: TADOStoredProc;
+    Queryvip: TADOQuery;
+    Dsvz: TDataSource;
+    vip_zadan: TADOStoredProc;
   private
     { Private declarations }
   public
@@ -67,7 +75,7 @@ var
 
 implementation
 
-uses Ureg, Umen;
+uses Ureg, Umen, Usotr;
 
 {$R *.dfm}
 

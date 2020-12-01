@@ -12,5 +12,9 @@
     <Transaction>2020.11.30 13:20:00.296.dfm,F:\code\Result\delphi\yura\turbo\Unit1.dfm=F:\code\Result\delphi\yura\turbo\Umen.dfm</Transaction>
     <Transaction>2020.11.30 22:40:41.033.pas,F:\code\Result\delphi\yura\turbo\Unit1.pas=F:\code\Result\delphi\yura\turbo\Usotr.pas</Transaction>
     <Transaction>2020.11.30 22:40:41.033.dfm,F:\code\Result\delphi\yura\turbo\Unit1.dfm=F:\code\Result\delphi\yura\turbo\Usotr.dfm</Transaction>
+    <Transaction>2020.12.01 16:43:01.976.pas,F:\code\Result\delphi\yura\turbo\Unit1.pas=F:\code\Result\delphi\yura\turbo\Uadmpass.pas</Transaction>
+    <Transaction>2020.12.01 16:43:01.976.dfm,F:\code\Result\delphi\yura\turbo\Unit1.dfm=F:\code\Result\delphi\yura\turbo\Uadmpass.dfm</Transaction>
+    <Transaction>2020.12.01 17:07:48.511.pas,F:\code\Result\delphi\yura\turbo\Unit1.pas=F:\code\Result\delphi\yura\turbo\Uadmis.pas</Transaction>
+    <Transaction>2020.12.01 17:07:48.511.dfm,F:\code\Result\delphi\yura\turbo\Unit1.dfm=F:\code\Result\delphi\yura\turbo\Uadmis.dfm</Transaction>
   </Transactions>
 </BorlandProject>

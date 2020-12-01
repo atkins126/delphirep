@@ -198,8 +198,8 @@ object dM: TdM
         '.cost_fact'
       'from Proect '
       'join manager on manager.id_manager=Proect.id_manager')
-    Left = 720
-    Top = 80
+    Left = 808
+    Top = 64
     object QueryotNam_proect: TStringField
       FieldName = 'Nam_proect'
       Size = 100
@@ -238,7 +238,7 @@ object dM: TdM
   end
   object DSot: TDataSource
     DataSet = Queryot
-    Left = 712
+    Left = 816
     Top = 144
   end
   object etapQuery: TADOQuery
@@ -264,6 +264,7 @@ object dM: TdM
         DataType = ftInteger
         Direction = pdReturnValue
         Precision = 10
+        Value = Null
       end
       item
         Name = '@Nam_etap'
@@ -298,6 +299,7 @@ object dM: TdM
         DataType = ftInteger
         Direction = pdReturnValue
         Precision = 10
+        Value = Null
       end
       item
         Name = '@Nam_work'
@@ -390,6 +392,7 @@ object dM: TdM
         DataType = ftInteger
         Direction = pdReturnValue
         Precision = 10
+        Value = Null
       end
       item
         Name = '@Fio'
@@ -445,6 +448,7 @@ object dM: TdM
         DataType = ftInteger
         Direction = pdReturnValue
         Precision = 10
+        Value = Null
       end
       item
         Name = '@Sr_vip'
@@ -514,6 +518,7 @@ object dM: TdM
         DataType = ftInteger
         Direction = pdReturnValue
         Precision = 10
+        Value = Null
       end
       item
         Name = '@Nam_dol'
@@ -549,6 +554,7 @@ object dM: TdM
         DataType = ftInteger
         Direction = pdReturnValue
         Precision = 10
+        Value = Null
       end
       item
         Name = '@N_rab'
@@ -571,5 +577,99 @@ object dM: TdM
     DataSet = Queryuv
     Left = 624
     Top = 144
+  end
+  object Querysearch: TADOQuery
+    Connection = ADOConnection1
+    Parameters = <>
+    SQL.Strings = (
+      
+        'select Zadanie.N_Zad, Zadanie.Sr_vip,Rabotnik.Fio, Zadanie.St_ra' +
+        'b, Zadanie.Data_nash,Zadanie.Date_fakt, Proect.Nam_proect, Work.' +
+        'Nam_work'
+      'from Zadanie'
+      'join Proect on Zadanie.N_Proekta=Proect.N_Proekta'
+      'join Work on Zadanie.N_Work=Work.N_Work'
+      'join Rabotnik on Rabotnik.N_Rab=Zadanie.N_Rab'
+      ' where Zadanie.Date_fakt is null')
+    Left = 688
+    Top = 80
+  end
+  object DSsearch: TDataSource
+    DataSet = Querysearch
+    Left = 696
+    Top = 144
+  end
+  object Querytasklist: TADOQuery
+    Connection = ADOConnection1
+    Parameters = <>
+    SQL.Strings = (
+      'select * from zadanie')
+    Left = 744
+    Top = 64
+  end
+  object DStasklist: TDataSource
+    DataSet = Querytasklist
+    Left = 752
+    Top = 128
+  end
+  object sel_task: TADOStoredProc
+    Connection = ADOConnection1
+    ProcedureName = 'sel_task;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+      end
+      item
+        Name = '@n_rab'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = 0
+      end>
+    Left = 760
+    Top = 200
+  end
+  object Queryvip: TADOQuery
+    Connection = ADOConnection1
+    Parameters = <>
+    SQL.Strings = (
+      'select * from zadanie')
+    Left = 864
+    Top = 80
+  end
+  object Dsvz: TDataSource
+    DataSet = Queryvip
+    Left = 872
+    Top = 160
+  end
+  object vip_zadan: TADOStoredProc
+    Connection = ADOConnection1
+    ProcedureName = 'vip_zadan;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+      end
+      item
+        Name = '@N_zad'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = 0
+      end
+      item
+        Name = '@date_fakt'
+        Attributes = [paNullable]
+        DataType = ftWideString
+        Size = 16
+        Value = '0:00:00'
+      end>
+    Left = 872
+    Top = 232
   end
 end
