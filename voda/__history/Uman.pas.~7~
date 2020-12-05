@@ -36,12 +36,12 @@ end;
 
 procedure TFmain.FormShow(Sender: TObject);
 begin
-Freg.Show;
+Freg.ShowModal;
 end;
 
 procedure TFmain.N1Click(Sender: TObject);
 begin
-Fins.Create(Application);
+TFins.Create(Application);
 fins.Show;
 end;
 

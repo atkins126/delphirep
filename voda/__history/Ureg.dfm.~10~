@@ -29,6 +29,9 @@ object Freg: TFreg
     Color = clRed
     ParentColor = False
     TabOrder = 0
+    ExplicitLeft = 8
+    ExplicitTop = -6
+    ExplicitWidth = 645
     DesignSize = (
       820
       153)
@@ -43,6 +46,7 @@ object Freg: TFreg
       EditLabel.Caption = #1051#1086#1075#1080#1085
       LabelPosition = lpLeft
       TabOrder = 0
+      ExplicitWidth = 565
     end
     object LabeledEdit2: TLabeledEdit
       Left = 77
@@ -56,6 +60,7 @@ object Freg: TFreg
       LabelPosition = lpLeft
       PasswordChar = '*'
       TabOrder = 1
+      ExplicitWidth = 565
     end
   end
   object GroupBox2: TGroupBox
@@ -65,6 +70,9 @@ object Freg: TFreg
     Height = 51
     Align = alBottom
     TabOrder = 1
+    ExplicitLeft = -8
+    ExplicitTop = 212
+    ExplicitWidth = 645
     object Button1: TButton
       Left = 2
       Top = 26
@@ -74,6 +82,10 @@ object Freg: TFreg
       Caption = #1042#1074#1086#1076
       TabOrder = 0
       OnClick = Button1Click
+      ExplicitLeft = 280
+      ExplicitTop = 16
+      ExplicitWidth = 75
+      ExplicitHeight = 25
     end
   end
 end

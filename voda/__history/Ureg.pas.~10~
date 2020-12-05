@@ -36,7 +36,7 @@ procedure TFreg.Button1Click(Sender: TObject);
 begin
 if((LabeledEdit1.Text=fdm.Querypass.FieldByName('user_name').AsString)and(LabeledEdit2.Text=fdm.Querypass.FieldByName('user_pass').AsString))  then
 begin
-//freg.Close;
+freg.Close;
 Fmain.Show;
 end
 else

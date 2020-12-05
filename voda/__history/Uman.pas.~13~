@@ -36,7 +36,7 @@ end;
 
 procedure TFmain.FormShow(Sender: TObject);
 begin
-Freg.Show;
+Freg.Showmodal;
 end;
 
 procedure TFmain.N1Click(Sender: TObject);

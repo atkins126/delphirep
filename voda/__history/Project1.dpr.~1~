@@ -11,9 +11,8 @@ uses
 
 begin
   Application.Initialize;
-  Application.CreateForm(TFreg, Freg);
   Application.CreateForm(TFmain, Fmain);
   Application.CreateForm(TfDM, fDM);
-  Application.CreateForm(TFins, Fins);
+  Application.CreateForm(TFreg, Freg);
   Application.Run;
 end.

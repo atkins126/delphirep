@@ -32,16 +32,17 @@ uses Udm, Uins, Ureg;
 procedure TFmain.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
 fDM.Querytpe_s.Close;
+
 end;
 
 procedure TFmain.FormShow(Sender: TObject);
 begin
-Freg.Show;
+Freg.ShowModal;
+TFins.Create(Application);
 end;
 
 procedure TFmain.N1Click(Sender: TObject);
 begin
-Fins.Create(Application);
 fins.Show;
 end;
 
